@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Deposit = () => {
-  const balance = useSelector(state => state.balance);
+  const balance = useSelector(state => state.balance.balance);
   const dispatch = useDispatch();
 
   function handleDeposit() {

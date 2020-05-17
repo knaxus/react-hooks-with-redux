@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Withdraw = () => {
-  const balance = useSelector(state => state.balance);
+  const balance = useSelector(state => state.balance.balance);
   const dispatch = useDispatch();
 
   function handleWithdraw() {
@@ -12,7 +12,7 @@ const Withdraw = () => {
   return (
     <>
       <h2>Balance: {balance}</h2>
-      <button onClick={handleWithdraw}>Withdraw</button>
+      <button disabled={balance <= 0 ? true : false} onClick={handleWithdraw}>Withdraw</button>
     </>
   )
 }
